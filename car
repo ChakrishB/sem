@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+
+class Car {
+public:
+    // Constructor
+    Car(std::string make, std::string model, int year) {
+        this->make = make;
+        this->model = model;
+        this->year = year;
+        std::cout << "Car created: " << make << " " << model << " (" << year << ")" << std::endl;
+    }
+
+    // Destructor
+    ~Car() {
+        std::cout << "Car being destroyed: " << make << " " << model << " (" << year << ")" << std::endl;
+    }
+
+    // Getters and setters
+    std::string getMake() {
+        return make;
+    }
+
+    void setMake(std::string make) {
+        this->make = make;
+    }
+
+    std::string getModel() {
+        return model;
+    }
+
+    void setModel(std::string model) {
+        this->model = model;
+    }
+
+    int getYear() {
+        return year;
+    }
+
+    void setYear(int year) {
+        this->year = year;
+    }
+
+private:
+    std::string make;
+    std::string model;
+    int year;
+};
+
+int main() {
+    // Creating a car object
+    Car car1("Toyota", "Camry", 2010);
+
+    // Accessing the make and model
+    std::cout << "This car is a " << car1.getMake() << " " << car1.getModel() << "." << std::endl;
+
+    return 0;
+}
